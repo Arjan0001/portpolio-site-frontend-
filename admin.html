@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Control Console - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- ========================================
+         LOCK SCREEN
+         ======================================== -->
+    <div id="lock-screen">
+        <div class="grid-background"></div>
+        <div class="scan-line"></div>
+        <div class="lock-content">
+            <div class="warning-icon">⚠️</div>
+            <h1 class="lock-title">RESTRICTED ACCESS</h1>
+            <p class="lock-subtitle">NEURAL CONTROL CONSOLE</p>
+            <p class="lock-subtitle">INITIALIZING SECURITY PROTOCOLS<span class="cursor-blink">_</span></p>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LOGIN SCREEN
+         ======================================== -->
+    <div id="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>🔐 ADMIN ACCESS</h2>
+                <p>NEURAL CONTROL CONSOLE</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="admin-id">ADMIN ID</label>
+                    <input type="text" id="admin-id" name="admin-id" required autocomplete="username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+                
+                <button type="submit" class="login-button">ACCESS CONSOLE</button>
+                
+                <div id="login-error" class="login-error"></div>
+            </form>
+            
+            <div class="login-footer">
+                <p>Authorized Personnel Only</p>
+                <a href="index.html" class="back-link">← Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         ADMIN PANEL
+         ======================================== -->
+    <div id="admin-panel" class="hidden">
+        
+        <!-- System Bar -->
+        <div class="system-bar">
+            <div class="system-title">
+                <span class="title-icon">⚡</span>
+                <span>NEURAL CONTROL CONSOLE</span>
+            </div>
+            <div class="system-info">
+                <span class="status-indicator online">● SYSTEM ONLINE</span>
+                <span id="system-clock" class="system-clock">00:00:00</span>
+                <button class="logout-button" onclick="logout()">LOGOUT</button>
+            </div>
+        </div>
+
+        <!-- Admin Layout -->
+        <div class="admin-layout">
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="sidebar-section">
+                    <button class="sidebar-item active" data-section="dashboard">
+                        <span class="sidebar-icon">📊</span>
+                        <span>Dashboard</span>
+                    </button>
+                    <button class="sidebar-item" data-section="projects">
+                        <span class="sidebar-icon">💼</span>
+                        <span>Projects</span>
+                    </button>
+                    <button class="sidebar-item" data-section="experience">
+                        <span class="sidebar-icon">🏢</span>
+                        <span>Experience</span>
+                    </button>
+                    <button class="sidebar-item" data-section="achievements">
+                        <span class="sidebar-icon">🏆</span>
+                        <span>Achievements</span>
+                    </button>
+                    <button class="sidebar-item" data-section="logs">
+                        <span class="sidebar-icon">📝</span>
+                        <span>System Logs</span>
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- Workspace -->
+            <main class="workspace">
+                
+                <!-- ========================================
+                     DASHBOARD SECTION
+                     ======================================== -->
+                <section id="section-dashboard" class="section active">
+                    <h2 class="section-title">Dashboard Overview</h2>
+                    
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">💼</div>
+                            <div class="stat-value" id="stat-projects">0</div>
+                            <div class="stat-label">Total Projects</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🏢</div>
+                            <div class="stat-value" id="stat-experience">0</div>
+                            <div class="stat-label">Experience Entries</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-value" id="stat-achievements">0</div>
+                            <div class="stat-label">Achievements</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">👤</div>
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Active Admin</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="switchSection('projects')">➕ Add Project</button>
+                            <button class="action-btn" onclick="switchSection('experience')">➕ Add Experience</button>
+                            <button class="action-btn" onclick="switchSection('achievements')">➕ Add Achievement</button>
+                            <button class="action-btn" onclick="downloadResume()">📥 Download Resume</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     PROJECTS SECTION
+                     ======================================== -->
+                <section id="section-projects" class="section">
+                    <h2 class="section-title">Projects Management</h2>
+                    
+                    <div class="control-panel">
+                        <h3>Add New Project</h3>
+                        <form id="project-form" class="data-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="project_no">Project Number</label>
+                                    <input type="number" id="project_no" name="project_no" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="project_name">Project Name</label>
+                                    <input type="text" id="project_name" name="project_name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="project_photo">Photo URL</label>
+                                <input type="url" id="project_photo" name="project_photo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="project_description">Description</label>
+                                <textarea id="project_description" name="project_description" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="github_link">GitHub Link</label>
+                                    <input type="url" id="github_link" name="github_link">
+                                </div>
+                                <div class="form-group">
+                                    <label for="video_link">Video Link</label>
+                                    <input type="url" id="video_link" name="video_link">
+                                </div>
+                                <div class="form-group">
+                                    <label for="deployed_link">Deployed Link</label>
+                                    <input type="url" id="deployed_link" name="deployed_link">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">ADD PROJECT</button>
+                            <div id="project-status" class="form-status"></div>
+                        </form>
+                    </div>
+                    
+                    <div class="data-list">
+                        <h3>Existing Projects</h3>
+                        <div id="projects-list" class="list-container">
+                            <div class="loading">Loading projects...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     EXPERIENCE SECTION
+                     ======================================== -->
+                <section id="section-experience" class="section">
+                    <h2 class="section-title">Experience Management</h2>
+                    
+                    <div class="control-panel">
+                        <h3>Add New Experience</h3>
+                        <form id="experience-form" class="data-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <input type="text" id="role" name="role" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="company">Company</label>
+                                    <input type="text" id="company" name="company" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="start_date">Start Date</label>
+                                    <input type="date" id="start_date" name="start_date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="end_date">End Date</label>
+                                    <input type="date" id="end_date" name="end_date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="duration">Duration</label>
+                                    <input type="text" id="duration" name="duration" placeholder="e.g., 2 years">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="responsibility">Responsibilities</label>
+                                <textarea id="responsibility" name="responsibility" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company_logo">Company Logo URL</label>
+                                <input type="url" id="company_logo" name="company_logo">
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">ADD EXPERIENCE</button>
+                            <div id="experience-status" class="form-status"></div>
+                        </form>
+                    </div>
+                    
+                    <div class="data-list">
+                        <h3>Existing Experience</h3>
+                        <div id="experience-list" class="list-container">
+                            <div class="loading">Loading experience...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     ACHIEVEMENTS SECTION
+                     ======================================== -->
+                <section id="section-achievements" class="section">
+                    <h2 class="section-title">Achievements Management</h2>
+                    
+                    <div class="control-panel">
+                        <h3>Add New Achievement</h3>
+                        <form id="achievement-form" class="data-form">
+                            <div class="form-group">
+                                <label for="achievement_title">Achievement Title</label>
+                                <input type="text" id="achievement_title" name="achievement_title" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="photo">Photo URL</label>
+                                <input type="url" id="photo" name="photo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" rows="4" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">ADD ACHIEVEMENT</button>
+                            <div id="achievement-status" class="form-status"></div>
+                        </form>
+                    </div>
+                    
+                    <div class="data-list">
+                        <h3>Existing Achievements</h3>
+                        <div id="achievements-list" class="list-container">
+                            <div class="loading">Loading achievements...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     SYSTEM LOGS SECTION
+                     ======================================== -->
+                <section id="section-logs" class="section">
+                    <h2 class="section-title">System Logs</h2>
+                    
+                    <div class="log-container">
+                        <div class="log-header">
+                            <span>SYSTEM ACTIVITY LOG</span>
+                            <button class="clear-log-btn" onclick="clearLog()">CLEAR LOG</button>
+                        </div>
+                        <div id="system-log" class="log-content">
+                            <div class="log-entry">
+                                <span class="log-time">00:00:00</span>
+                                <span class="log-message">System initialized</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

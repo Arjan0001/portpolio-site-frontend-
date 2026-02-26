@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjan Pathan - Neural Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen with Startup Sequence -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div id="loading-text">Initializing Cognitive System...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-logo">ARJAN PATHAN</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active" data-page="home">Home</a>
+            <a href="#about" class="nav-link" data-page="about">About</a>
+            <a href="#projects" class="nav-link" data-page="projects">Projects</a>
+            <a href="#experience" class="nav-link" data-page="experience">Experience</a>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- 3D Canvas for Neural Brain -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Background Particles Container -->
+    <div id="bg-particles"></div>
+
+    <!-- Main Content Container -->
+    <div id="content-container">
+        
+        <!-- HOME PAGE - Core Identity Hub -->
+        <section id="page-home" class="page active">
+            <div class="hero-section">
+                <h1 class="glitch-text" data-text="ARJAN PATHAN">ARJAN PATHAN</h1>
+                <p class="tagline">Exploring Intelligence Through Code</p>
+                <p class="role">IT Engineer | AI/ML Enthusiast | Full-Stack Developer</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="glass-card">
+                    <h3>About Me</h3>
+                    <p>Passionate Information technology specializing in AI, machine learning, and full-stack development. Building intelligent systems that bridge human creativity with computational power.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>Core Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JAVASCRIPT</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">PYTHON</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Machine learning</span>
+                        <span class="skill-tag">GenAI</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="glass-card stats-card">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Technologies Mastered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="20">0</div>
+                        <div class="stat-label">Problems Solved</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-resume-section">
+                <div class="glass-card social-card">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/Arjan0001" target="_blank" class="social-icon" title="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/arjan-pathan/" target="_blank" class="social-icon" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <!-- <a href="https://twitter.com/arjanpathan" target="_blank" class="social-icon" title="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a> -->
+                        <a href="mailto:arjanpathan.112023336@sitrc.org" class="social-icon" title="Email">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@arjanpathan445" target="_blank" class="social-icon" title="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-card resume-card">
+                    <h3>Download Resume</h3>
+                    <p>Get my complete professional profile</p>
+                    <button class="cta-button primary" onclick="downloadResume()">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px; margin-right: 8px;">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        Download Resume
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact-info-home">
+                <div class="glass-card">
+                    <h3>Contact Information</h3>
+                    <div class="contact-items-grid">
+                        <div class="contact-info-item">
+                            <svg class="contact-info-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <div class="contact-info-text">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:arjanpathan.112023336@sitrc.org" class="contact-value">arjanpathan.112023336@sitrc.org</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <svg class="contact-info-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <div class="contact-info-text">
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:+919359710230" class="contact-value">+919359710230</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <svg class="contact-info-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <div class="contact-info-text">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Nashik, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <button class="cta-button primary" onclick="navigateToPage('projects')">Explore Projects</button>
+                <button class="cta-button secondary" onclick="navigateToPage('experience')">View Experience</button>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE - Personality Cortex -->
+        <section id="page-about" class="page">
+            <div class="page-header">
+                <h2>Identity Cortex</h2>
+                <p class="page-subtitle">Mapping Neural Architecture</p>
+            </div>
+
+            <div class="about-content">
+                <div class="glass-card large">
+                    <h3>About Me</h3>
+                    <p>Arjan Pathan is a 3nd-year B.Tech IT student with strong skills in coding, problem-solving, and analytical thinking. He is an aspiring entrepreneur, actively working on tech startups, AI projects, and software solutions. Arjan is passionate about building innovative products that solve real-world problems and aims to make a meaningful impact through technology. He is also a soft-hearted, determined individual who believes in continuous learning, growth, and turning ideas into reality.</p>
+                </div>
+
+              <div class="timeline-container">
+    <h3>Journey Timeline</h3>
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <h4>Aug 2023</h4>
+                <p>Started B.Tech in Information Technology</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <h4>July 2024</h4>
+                <p>Began Full-Stack Development Journey</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <h4>Jan 2025</h4>
+                <p>Explored Machine Learning & AI Fundamentals</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <h4>July 2025</h4>
+                <p>Started Journey as a Tech Speaker</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <h4>Aug 2025</h4>
+                <p>Joined ABB as a Technical Intern</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <h4>Nov 2025</h4>
+                <p>Selected in DPIIT Top 15 Teams – Computer Vision</p>
+            </div>
+        </div>
+
+        <div class="timeline-item active">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <h4>Jan 2026</h4>
+                <p>Started Role as Generative AI Engineer at CodeFeast</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+                <div class="glass-card">
+                    <h3>Vision & Goals</h3>
+                    <p>My vision is to use my technical skills to build impactful solutions while developing strong professional connections. I aim to become an effective tech speaker and communicator who simplifies complex ideas and inspires others. Ultimately, I strive to lead innovation and create positive change through technology.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>Beyond Code</h3>
+                    <p>Beyond code, my vision is to use technology, communication, and strong connections to create real impact in people’s lives. I aim to inspire, lead, and empower others while building solutions and communities that shape a better future.
+</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS PAGE - Innovation Cortex -->
+        <section id="page-projects" class="page">
+            <div class="page-header">
+                <h2>Innovation Cortex</h2>
+                <p class="page-subtitle">Neural Network of Creations</p>
+            </div>
+
+            <div id="projects-loading" class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading projects from neural database...</p>
+            </div>
+
+            <div id="projects-container" class="projects-grid"></div>
+        </section>
+
+        <!-- EXPERIENCE PAGE - Leadership Cortex -->
+        <section id="page-experience" class="page">
+            <div class="page-header">
+                <h2>Leadership Cortex</h2>
+                <p class="page-subtitle">Achievement Network</p>
+            </div>
+
+            <div id="experience-loading" class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading experience data...</p>
+            </div>
+
+            <div id="experience-container" class="experience-content"></div>
+
+            <div class="achievements-section">
+                <h3>Achievements & Recognition</h3>
+                <div id="achievements-loading" class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p>Loading achievements...</p>
+                </div>
+                <div id="achievements-container" class="achievements-grid"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Detail Panel for Project/Experience Details -->
+    <div id="detail-panel" class="detail-panel">
+        <button class="close-panel" onclick="closeDetailPanel()">×</button>
+        <div id="detail-content"></div>
+    </div>
+
+    <!-- Three.js Library (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Main Script -->
+    <script src="script.js"></script>
+
+    <!-- Hidden Admin Access: Press CTRL + ALT + A or visit /admin.html directly -->
+</body>
+</html>
